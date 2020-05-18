@@ -4,6 +4,8 @@ import Home from '../views/Home.vue'
 import Listing from '../views/Listing.vue'
 import Article from '../views/Article.vue'
 
+import '../assets/css/reset.scss';
+
 Vue.use(VueRouter)
 
   const routes = [
