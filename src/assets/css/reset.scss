@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    color: #434550;
+}
+
+body{
+    margin: 0 !important;
+}
+
+.container{
+    width: 95%;
+    margin: 0 auto;
+}
+
+.btn{
+    padding: 15px 0;
+    border: 1px solid #434550;
+    display: block;
+    width: 175px;
+    text-align: center;
+
+    &.btn-link{
+    }
+
+    &.btn-center{
+        margin: 0 auto;
+    }
+}

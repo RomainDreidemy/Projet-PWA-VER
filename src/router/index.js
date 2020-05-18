@@ -1,9 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Product from '../views/Product.vue'
 import Home from '../views/Home.vue'
-import Product_list from '../views/Product_list.vue'
-
+import Listing from '../views/Listing.vue'
+import Article from '../views/Article.vue'
 
 Vue.use(VueRouter)
 
@@ -14,14 +13,14 @@ Vue.use(VueRouter)
     component: Home
   },
   {
-    path: '/product',
-    name: 'Product',
-    component: Product
+    path: '/listing',
+    name: 'Listing',
+    component: Listing
   },
   {
-    path: '/product_list',
-    name: 'Product_list',
-    component: Product_list
+    path: '/article/:slug',
+    name: 'Article',
+    component: Article
   }
 ]
 
