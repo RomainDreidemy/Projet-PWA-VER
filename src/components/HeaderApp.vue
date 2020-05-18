@@ -47,19 +47,19 @@ header{
 
         div{
             &#header-logo{
-                // Todo: Set css
+                font-size: 28px;
             }
 
             &#header-navigation{
                 a{
-                    margin-right: 10px;
+                    margin-right: 15px;
                     font-size: 18px;
                 }
             }
 
             &#header-reseaux{
                 a{
-                    margin-right: 5px;
+                    margin-right: 15px;
                 }
             }
         }

@@ -3,33 +3,35 @@
     <HeaderApp></HeaderApp>
     <main>
       <div id="home-banner">
-        <img src="https://placehold.co/1200x600?text=Banner" alt="">
+        <img src="@/assets/img/home-banner.jpg" alt="">
       </div>
+
+      <h2>- LES SAVONS -</h2>
 
       <div id="home-savon-list" class="container">
         <div class="home-savon">
-          <img src="https://placehold.co/600x300?text=Savon" alt="Article name">
+          <img src="@/assets/img/home-fleur-d'oranger.png" alt="Article name">
           <h3>
             Savon au parfum de fleur d'oranger, peaux sensibles
           </h3>
         </div>
 
         <div class="home-savon">
-          <img src="https://placehold.co/600x300?text=Savon" alt="Article name">
+          <img src="@/assets/img/home-lavande.png" alt="Article name">
           <h3>
             Savon au parfum de fleur d'oranger, peaux sensibles
           </h3>
         </div>
 
         <div class="home-savon">
-          <img src="https://placehold.co/600x300?text=Savon" alt="Article name">
+          <img src="@/assets/img/home-miel.png" alt="Article name">
           <h3>
             Savon au parfum de fleur d'oranger, peaux sensibles
           </h3>
         </div>
 
         <div class="home-savon">
-          <img src="https://placehold.co/600x300?text=Savon" alt="Article name">
+          <img src="@/assets/img/home-peau-seche.png" alt="Article name">
           <h3>
             Savon au parfum de fleur d'oranger, peaux sensibles
           </h3>
@@ -90,13 +92,15 @@ export default {
       }
 
       &#home-newsletter{
-        background: url('https://placehold.co/2000x1000?text=Newsletter') no-repeat ;
+        background: url('../assets/img/home-newsletter.png') no-repeat;
+        background-size: cover;
 
         margin-top: 100px;
         padding: 50px;
         text-align: center;
         
         h2{
+          margin-top: 0px;
           color: #fff;
         }
 
@@ -124,8 +128,13 @@ export default {
       }
     }
 
+    h2{
+      text-align: center;
+      margin-top: 100px;
+    }
+
     a.btn{
-      margin: 15px auto !important;
+      margin: 30px auto !important;
     }
 
   }
