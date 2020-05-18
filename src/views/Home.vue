@@ -111,9 +111,15 @@ export default {
           width: 250px;
           margin-top: 15px;
           background: none;
+          color: #fff;
           border: 1px solid #fff;
           text-align: center;
+
+          &::placeholder{
+            color: #fff;
+          }
         }
+        
         
         button{
           border: 1px solid #fff;
