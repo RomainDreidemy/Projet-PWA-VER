@@ -1,18 +1,14 @@
 <template>
-  <div class="home">
+  <div class="article">
     <HeaderApp></HeaderApp>
-    <h1>Ici la home</h1>
+    <h1>Ceci est la page d'un article</h1>
   </div>
 </template>
-
-<style lang="scss" scoped>
-</style>
 
 <script>
 import HeaderApp from '@/components/HeaderApp.vue';
 
 export default {
-  name: 'Home',
   components: {
     HeaderApp,
   }

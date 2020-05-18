@@ -1,18 +1,15 @@
 <template>
-  <div class="home">
+  <div class="product_list">
     <HeaderApp></HeaderApp>
-    <h1>Ici la home</h1>
+    <h1>Ceci est la page des articles</h1>
+    <router-link to="/product">Go to article</router-link>
   </div>
 </template>
-
-<style lang="scss" scoped>
-</style>
 
 <script>
 import HeaderApp from '@/components/HeaderApp.vue';
 
 export default {
-  name: 'Home',
   components: {
     HeaderApp,
   }
