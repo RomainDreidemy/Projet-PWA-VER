@@ -16,7 +16,7 @@
           <p>{{ post.body }}</p>
         </div>
 
-        <div id="sharedButton" v-on:click="sharedAdd">Partagez</div>
+        <div id="sharedButton" v-if="shared" v-on:click="sharedAdd">Partagez</div>
 
         <hr>
 
