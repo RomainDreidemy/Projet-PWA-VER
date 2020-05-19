@@ -98,14 +98,13 @@ header{
 export default {
     data() {
         return {
-            header: true
+            header: false
         }
     },
     mounted() {
         console.log(this.$route.name);
-        if(this.$route.name == 'Listing' || this.$route.name == 'Article'){
-            this.header = false
-            console.log(this.header)
+        if(this.$route.name == 'Home'){
+            this.header = true
         }
     }
 }

@@ -9,7 +9,7 @@
             <h2>{{ post.title }}</h2>
             <p class="article-date">18 mai 2020</p>
             <img src="@/assets/img/listing-1.png" alt="">
-            <p class="article-description">{{ post.body }}</p>
+            <p class="article-description">{{ post.body.substr(1, 200) }}...</p>
             
             <router-link :to="{name: 'Article', params: {slug: post.id}}" class="product-link">Lire la suite</router-link>            
           </div>
@@ -84,7 +84,6 @@ export default {
         this.posts = data
       })
     })
-    .catch(err => { console.log(err)})
   }
 }
 </script>
