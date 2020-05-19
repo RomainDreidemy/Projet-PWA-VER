@@ -4,7 +4,6 @@
     <main>
 
       <div id="home-banner">
-        <img src="@/assets/img/home-banner.jpg" alt="">
         <h1>Fabrication artisanale <br>en France</h1>
       </div>
 
@@ -74,8 +73,10 @@ export default {
   main{
     div{
       &#home-banner{
-        max-height: 100vh;
+        height: 100vh;
         overflow: hidden;
+        background: url("../assets/img/home-banner.jpg");
+        background-size: cover;
         h1{
           position: absolute;
           top: 25vh;
