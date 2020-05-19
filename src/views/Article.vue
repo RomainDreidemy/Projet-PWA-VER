@@ -23,11 +23,9 @@
           <div v-if="comments">
             <div id="article-comment-list">
               <div v-for="comment in comments"  v-bind:key="comment.id">
-                <div v-if="comment.id === post.id" class="article-comment">
-                  <h3>{{ comment.author }}</h3>
-                  <p class="article-comment-date">18 mai 2020</p>
-                  <p class="article-comment-message">{{ comment.message }}</p>
-                </div>
+                <h3>{{ comment.author }}</h3>
+                <p class="article-comment-date">18 mai 2020</p>
+                <p class="article-comment-message">{{ comment.message }}</p>
               </div>
             </div> 
           </div>
@@ -154,14 +152,17 @@ export default {
   created() {
     fetch(`https://my-json-server.typicode.com/RomainDreidemy/API-le-petit-pas-marseillais/posts/${this.$route.params.slug}`).then((response) => {
       response.json().then((data) => {
+        console.log(data);
         this.post = data
       })
     });
 
     fetch(`https://my-json-server.typicode.com/RomainDreidemy/API-le-petit-pas-marseillais/comments`).then((response) => {
       response.json().then((data) => {
-        this.comments = data
-        console.log(this.comments);
+
+        const result = data.filter(d => d.idArticle == this.post.id);
+        this.comments = result
+        console.log(this.comments[0].idArticle);
       })
     });
   },
