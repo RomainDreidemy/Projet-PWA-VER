@@ -124,14 +124,21 @@
                     width: 49%;
                   }
                 }
-
-                
               }
         }
       }
 
       hr{
         margin: 50px 0;
+      }
+
+      #sharedButton{
+        border: 1px solid #434550;
+        border-radius: 3px;
+        padding: 15px 15px;
+        width: 100px;
+        margin-top: 15px;
+        cursor: pointer;
       }
 
 
