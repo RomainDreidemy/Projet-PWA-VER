@@ -84,6 +84,7 @@ export default {
         this.posts = data
       })
     })
+    .catch(err => { console.log(err)})
   }
 }
 </script>
