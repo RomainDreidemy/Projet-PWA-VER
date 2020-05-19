@@ -6,6 +6,7 @@
       <div id="page-article">
         <router-link :to="{name: 'Listing'}" class="product-link">Retour à la liste des articles</router-link>
 
+        <div class="result"></div>
         <div id="article" v-if="post">
           <h1>{{ post.title }}</h1>
           <p id="article-date">18 mai 2020</p>
@@ -14,6 +15,8 @@
 
           <p>{{ post.body }}</p>
         </div>
+
+        <div id="sharedButton" v-on:click="sharedAdd">Partagez</div>
 
         <hr>
 
@@ -147,6 +150,7 @@ export default {
     return {
       post: null,
       comments: null,
+      shared: false
     }
   },
   created() {
@@ -165,6 +169,13 @@ export default {
         console.log(this.comments[0].idArticle);
       })
     });
+
+    if(window.navigator.share){
+      console.log('Share');
+      this.shared = true;
+    }else{
+      console.log('not share');
+    }
   },
   methods: {
     addComment: (event) => {
@@ -180,6 +191,26 @@ export default {
           "message": "Les savons c'est trop bien"
         }
       })
+    },
+
+    sharedAdd: () => {
+      const shareData = {
+        title: 'Le Petit Pas Marseillais',
+        text: 'Partagez cet incroyable article sur le savon',
+        url: window.location.href,
+      }
+
+      // const sharedButton = document.getElementById('sharedButton')
+      const resultPara = document.querySelector('.result');
+
+      // Must be triggered some kind of "user activation"
+      try {
+        navigator.share(shareData).then(() => {
+          resultPara.textContent = 'MDN shared successfully'
+        })
+      } catch(err) {
+        resultPara.textContent = 'Error: ' + err
+      }
     }
   }
 }
