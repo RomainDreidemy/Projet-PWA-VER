@@ -20,29 +20,29 @@
         <div id="article-comment">
           <h2>COMMENTAIRES</h2>
 
-          <div id="article-comment-list">
-            <div class="article-comment">
-              <h3>Victor Balducci</h3>
-              <p class="article-comment-date">18 mai 2020</p>
-              <p class="article-comment-message">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor !</p>
-            </div>
-
-            <div class="article-comment">
-              <h3>Victor Balducci</h3>
-              <p class="article-comment-date">18 mai 2020</p>
-              <p class="article-comment-message">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor !</p>
-            </div>
+          <div v-if="comments">
+            <div id="article-comment-list">
+              <div v-for="comment in comments"  v-bind:key="comment.id">
+                <div v-if="comment.id === post.id" class="article-comment">
+                  <h3>{{ comment.author }}</h3>
+                  <p class="article-comment-date">18 mai 2020</p>
+                  <p class="article-comment-message">{{ comment.message }}</p>
+                </div>
+              </div>
+            </div> 
           </div>
+          
 
+          
           <h2>ÉCRIRE UN COMMENTAIRE</h2>
 
-          <form action="/" method="post">
+          <form action="/" method="post" v-on:submit="addComment">
             <div class="article-comment-form-flex">
-              <input type="text" placeholder="Nom">
-              <input type="text" placeholder="Email">
+              <input type="text" name="author" placeholder="Nom">
+              <input type="text" name="Email" placeholder="Email">
             </div>
 
-            <textarea name="" placeholder="Contenu"></textarea>
+            <textarea name="comment" placeholder="Contenu"></textarea>
 
             <button type="submit">Envoyer</button>
           </form>
@@ -147,7 +147,8 @@ export default {
   },
   data() {
     return {
-      post: null
+      post: null,
+      comments: null,
     }
   },
   created() {
@@ -155,7 +156,30 @@ export default {
       response.json().then((data) => {
         this.post = data
       })
-    })
+    });
+
+    fetch(`https://my-json-server.typicode.com/RomainDreidemy/API-le-petit-pas-marseillais/comments`).then((response) => {
+      response.json().then((data) => {
+        this.comments = data
+        console.log(this.comments);
+      })
+    });
+  },
+  methods: {
+    addComment: (event) => {
+      event.preventDefault();
+      console.log(event.target.author.value);
+
+      fetch(`https://my-json-server.typicode.com/RomainDreidemy/API-le-petit-pas-marseillais/comments`, {
+        method: 'post',
+        body: {
+          "id": 2,
+          "idArticle": 2,
+          "author": "Victor Balducci",
+          "message": "Les savons c'est trop bien"
+        }
+      })
+    }
   }
 }
 
