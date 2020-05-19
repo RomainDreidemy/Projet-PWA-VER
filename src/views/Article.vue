@@ -151,7 +151,7 @@ export default {
     }
   },
   created() {
-    fetch(`https://jsonplaceholder.typicode.com/posts/${this.$route.params.slug}`).then((response) => {
+    fetch(`https://my-json-server.typicode.com/RomainDreidemy/API-le-petit-pas-marseillais/posts/${this.$route.params.slug}`).then((response) => {
       response.json().then((data) => {
         this.post = data
       })
