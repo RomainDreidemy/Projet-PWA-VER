@@ -257,14 +257,13 @@ export default {
   methods: {
     addComment: (event) => {
       event.preventDefault();
-      console.log(event.target.author.value);
 
       fetch(`https://my-json-server.typicode.com/RomainDreidemy/API-le-petit-pas-marseillais/comments`, {
         method: 'post',
         body: {
           "id": 2,
           "idArticle": 2,
-          "author": "Victor Balducci",
+          "author": "Romain Dreidemy",
           "message": "Les savons c'est trop bien"
         }
       })
