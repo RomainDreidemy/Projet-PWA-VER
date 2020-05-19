@@ -1,10 +1,6 @@
 self.__precacheManifest = [].concat(self.__precacheManifest || [])
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {})
 
-workbox.setConfig({
-	debug: true
-})
-
 workbox.routing.registerRoute(
     new RegExp('https://jsonplaceholder.typicode.com/(.*)'),
     new workbox.strategies.CacheFirst({
