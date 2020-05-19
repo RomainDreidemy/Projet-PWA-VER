@@ -184,6 +184,28 @@
 
     }
   }
+
+  @media (max-width: 900px) {
+    main{
+      div#page-article{
+        width: 80%;
+      }
+    }
+    
+  }
+
+  @media (max-width: 700px) {
+    main{
+      div#page-article{
+        width: 95%;
+        div#article-list{
+          div.article{
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
 </style>
 
 <script>
