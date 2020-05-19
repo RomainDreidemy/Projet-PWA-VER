@@ -79,7 +79,7 @@ export default {
     }
   },
   created() {
-    fetch('https://jsonplaceholder.typicode.com/posts', { mode: 'no-cors' }).then((response) => {
+    fetch('https://jsonplaceholder.typicode.com/posts').then((response) => {
       response.json().then((data) => {
         this.posts = data
       })
