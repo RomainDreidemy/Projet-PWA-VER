@@ -124,8 +124,7 @@ export default {
         }
     },
     mounted() {
-        console.log(this.$route.name);
-        if(this.$route.name == 'Home'){
+        if(this.$route.name == 'Home' || this.$route.name == 'Article'){
             this.header = true
         }
     }

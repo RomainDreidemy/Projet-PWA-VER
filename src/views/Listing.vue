@@ -11,8 +11,8 @@
           <div class="article" v-for="post in posts" :key="post.id">
             <h2>{{ post.title }}</h2>
             <p class="article-date">18 mai 2020</p>
-            <img src="@/assets/img/listing-1.png" alt="">
-            <p class="article-description">{{ post.body.substr(1, 200) }}...</p>
+            <img src="@/assets/img/listing/listing-1.png">
+            <p v-html="post.body.substr(0, 200).concat('...')" class="article-description">.</p>
             
             <router-link :to="{name: 'Article', params: {slug: post.id}}" class="product-link">Lire la suite</router-link>            
           </div>
@@ -102,6 +102,11 @@
     main{
       div#page-article{
         width: 95%;
+        div#article-list{
+          div.article{
+            width: 100%;
+          }
+        }
       }
     }
   }

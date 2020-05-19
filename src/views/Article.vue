@@ -3,17 +3,19 @@
     <HeaderApp></HeaderApp>
     
     <main>
+      <div id="article-banner" :alt="`listing-${post.id}`">
+          <h1>{{ post.title }}</h1>
+      </div>
+
       <div id="page-article">
+        
         <router-link :to="{name: 'Listing'}" class="product-link">Retour à la liste des articles</router-link>
 
         <div class="result"></div>
         <div id="article" v-if="post">
-          <h1>{{ post.title }}</h1>
-          <p id="article-date">18 mai 2020</p>
+          <p id="article-date">publié le 18 mai 2020</p>
 
-          <img src="@/assets/img/listing-1.png" alt="Article name">
-
-          <p>{{ post.body }}</p>
+          <p v-html="post.body" class="article-content"></p>
         </div>
 
         <div id="sharedButton" v-if="shared" v-on:click="sharedAdd">Partagez</div>
@@ -55,9 +57,45 @@
 
 <style lang="scss" scoped>
   main{
+    #article-banner{
+        height: 80vh;
+        overflow: hidden;
+        background: url("../assets/img/listing/listing-1.png") no-repeat fixed;
+        content: attr(alt);
+        background-size: cover;
+        h1{
+          position: absolute;
+          bottom: calc(20vh + 10px);
+          left: 30px;
+          text-align: left;
+          color: #fff;
+          font-size: 50px;
+        }
+      }
+
+      
     div#page-article{
+      
+
       width: 70%;
       margin: 40px auto 0 auto;
+
+      p{
+        margin-top: 15px;
+      }
+
+      p.article-content{
+          // background: blue;
+
+        *{
+          background: blue;
+          border: 5px solid red;
+          display: block;
+          margin: 15px;
+        }
+      } 
+
+
       div{
         &#article{
           h1{
@@ -69,6 +107,8 @@
             margin: 10px 0;
           }
         }
+
+        
 
         &#article-comment{
           div#article-comment-list{
@@ -163,9 +203,8 @@ export default {
   created() {
     fetch(`https://my-json-server.typicode.com/RomainDreidemy/API-le-petit-pas-marseillais/posts/${this.$route.params.slug}`).then((response) => {
       response.json().then((data) => {
-        console.log(data);
         this.post = data
-
+        //Stock la page pour garder un historique
         localStorage.setItem(this.$route.path, this.post.title);
       })
 
@@ -174,10 +213,8 @@ export default {
 
     fetch(`https://my-json-server.typicode.com/RomainDreidemy/API-le-petit-pas-marseillais/comments`).then((response) => {
       response.json().then((data) => {
-
         const result = data.filter(d => d.idArticle == this.post.id);
         this.comments = result
-        console.log(this.comments[0].idArticle);
       })
     });
 
