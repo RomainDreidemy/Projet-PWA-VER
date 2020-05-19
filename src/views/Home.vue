@@ -157,4 +157,15 @@ export default {
     }
 
   }
+
+@media (max-width: 900px) {
+    #home-savon-list{
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .home-savon{
+      width: 64% !important;
+    }
+  }
 </style>
