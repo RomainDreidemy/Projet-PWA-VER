@@ -90,6 +90,7 @@ export default {
       &#home-savon-list{
         margin-top: 30px;
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
 
         div.home-savon{
@@ -154,14 +155,9 @@ export default {
 
   }
 
-@media (max-width: 900px) {
-    #home-savon-list{
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
+@media (max-width: 980px) {
     .home-savon{
-      width: 85% !important;
+      width: 49% !important;
       margin-bottom: 20px;
     }
     &#home-banner{
