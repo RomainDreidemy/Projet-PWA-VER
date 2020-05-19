@@ -31,6 +31,7 @@
 
       div#article-list{
         div.article{
+          margin-top: 30px;
           img{
             margin-top: 10px;
           }

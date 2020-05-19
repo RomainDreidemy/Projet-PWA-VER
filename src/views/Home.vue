@@ -72,6 +72,7 @@ export default {
   main{
     div{
       &#home-banner{
+        margin-top: 40px;
         img{
           width: 100%;
         }
