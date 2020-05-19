@@ -4,6 +4,7 @@
     <main>
       <div id="home-banner">
         <img src="@/assets/img/home-banner.jpg" alt="">
+        <h1>Fabrication artisanale <br>en France</h1>
       </div>
 
       <h2>- LES SAVONS -</h2>
@@ -72,7 +73,18 @@ export default {
   main{
     div{
       &#home-banner{
-        margin-top: 40px;
+        max-height: 99vh;
+        overflow: hidden;
+
+        h1{
+          position: absolute;
+          top: 20vh;
+          left: 30px;
+          text-align: left;
+          color: #fff;
+          font-size: 50px;
+        }
+
         img{
           width: 100%;
         }
