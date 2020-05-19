@@ -5,11 +5,12 @@
                 <router-link :to="{name: 'Home'}">Le Petit Pas Marseillais</router-link>
             </div>
             <div id="header-navigation">
-                <router-link :to="{name: 'Home'}" class="product-link">Accueil</router-link>
-                <router-link :to="{name: 'Listing'}" class="product-link">Articles</router-link>
-                <router-link :to="{name: 'Listing'}" class="product-link">A propos</router-link>
+                <!--<router-link :to="{name: 'Home'}" class="product-link">Accueil</router-link>-->
+                <!--<router-link :to="{name: 'Listing'}" class="product-link">Articles</router-link>-->
+                <!--<router-link :to="{name: 'Listing'}" class="product-link">A propos</router-link>-->
             </div>
             <div id="header-reseaux">
+                <router-link :to="{name: 'Listing'}" class="product-link">Articles</router-link>
                 <a href="https://facebook.com">
                     <svg width="22" height="22" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
                         <path d="M22 11C22 4.92319 17.0727 0 11 0C4.92319 0 0 4.92319 0 11C0 16.489 4.02119 21.0402 9.28125 21.8646V14.1804H6.48794V11.0007H9.28125V8.57588C9.28125 5.81969 10.9209 4.29756 13.4344 4.29756C14.6383 4.29756 15.8984 4.51206 15.8984 4.51206V7.21875H14.509C13.145 7.21875 12.7188 8.06781 12.7188 8.9375V11H15.7692L15.279 14.1797H12.7188V21.8639C17.9747 21.0396 22 16.4883 22 10.9993V11Z"/>
@@ -48,17 +49,21 @@ header{
 
             div{
                 &#header-logo{
-                    a{
+                    a {
                         color: #fff;
                     }
                 }
 
                 &#header-navigation{
-                    a{
+                    a {
                         color: #fff;
                     }
                 }
                 &#header-reseaux{
+                    display: flex;
+                    a {
+                        color: #fff;
+                    }
                      svg{
                         path{
                             fill: #fff;
@@ -71,8 +76,6 @@ header{
 
     height: 110px;
     
-    
-
     nav{
         position: relative;
         display: flex;
@@ -86,7 +89,6 @@ header{
                 a{
                     font-size: 28px;
                 }
-                
             }
 
             &#header-navigation{
@@ -97,10 +99,18 @@ header{
             }
 
             &#header-reseaux{
+                display: flex;
                 a{
                     margin-right: 15px;
                 }
             }
+        }
+    }
+}
+@media (max-width: 900px) {
+    #header-logo{
+        a{
+            font-size: 20px !important;
         }
     }
 }

@@ -73,20 +73,15 @@ export default {
   main{
     div{
       &#home-banner{
-        max-height: 99vh;
+        max-height: 100vh;
         overflow: hidden;
-
         h1{
           position: absolute;
-          top: 20vh;
+          top: 25vh;
           left: 30px;
           text-align: left;
           color: #fff;
           font-size: 50px;
-        }
-
-        img{
-          width: 100%;
         }
       }
 
@@ -105,9 +100,8 @@ export default {
       }
 
       &#home-newsletter{
-        background: url('../assets/img/home-newsletter.png') no-repeat center center fixed;
+        background: url('../assets/img/home-newsletter.png') no-repeat fixed;
         background-size: cover;
-
         margin-top: 100px;
         padding: 50px;
         text-align: center;
@@ -166,6 +160,13 @@ export default {
     }
     .home-savon{
       width: 64% !important;
+    }
+    &#home-banner{
+        max-height: 100vh;
+        overflow: hidden;
+        h1{
+          font-size: 40px !important;
+        }
     }
   }
 </style>
