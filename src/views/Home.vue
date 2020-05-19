@@ -161,7 +161,8 @@ export default {
       align-items: center;
     }
     .home-savon{
-      width: 64% !important;
+      width: 85% !important;
+      margin-bottom: 20px;
     }
     &#home-banner{
         max-height: 100vh;
@@ -169,6 +170,12 @@ export default {
         h1{
           font-size: 40px !important;
         }
+    }
+  }
+
+  @media (max-width: 700px) {
+    .home-savon{
+      width: 100% !important;
     }
   }
 </style>
