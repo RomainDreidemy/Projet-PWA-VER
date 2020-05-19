@@ -19,11 +19,6 @@
             <hr>
       </div>
       <div v-else>Vous n'avez consulté aucun article</div>
-      <div id="page-recent">
-        <ul>
-          <li v-for="page in pages" v-bind:key="page[0]">{{ page[1] }}</li>
-        </ul>
-      </div>
     </div>
       
     </main>
