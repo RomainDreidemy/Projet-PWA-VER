@@ -2,6 +2,7 @@
   <div id="page-home">
     <HeaderApp></HeaderApp>
     <main>
+
       <div id="home-banner">
         <img src="@/assets/img/home-banner.jpg" alt="">
         <h1>Fabrication artisanale <br>en France</h1>

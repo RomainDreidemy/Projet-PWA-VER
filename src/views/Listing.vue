@@ -3,7 +3,10 @@
     <HeaderApp></HeaderApp>
 
     <main>
+
       <div id="page-article">
+        <router-link :to="{name: 'Recent'}" class="product-link">Voir les articles récement consulté</router-link>            
+
         <div id="article-list">
           <div class="article" v-for="post in posts" :key="post.id">
             <h2>{{ post.title }}</h2>
