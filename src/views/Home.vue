@@ -106,6 +106,7 @@ export default {
 
       &#home-newsletter{
         background: url('../assets/img/home-newsletter.png') no-repeat center center fixed;
+        background-size: cover;
 
         margin-top: 100px;
         padding: 50px;
