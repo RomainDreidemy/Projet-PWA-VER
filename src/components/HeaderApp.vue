@@ -1,5 +1,5 @@
 <template>
-    <header>
+    <header :class="{white: header}">
         <nav>
             <div id="header-logo">
                 <router-link :to="{name: 'Home'}">Sāvon</router-link>
@@ -27,10 +27,38 @@
 
 <style scoped lang="scss">
 header{
+    &.white{
+        position: absolute;
+        width: 100%;
+        top: 0;
+
+        nav{
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+            padding: 0 30px;
+
+            div{
+                &#header-logo{
+                    a{
+                        color: #fff;
+                    }
+                    
+                }
+
+                &#header-navigation{
+                    a{
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+
     height: 110px;
-    position: absolute;
-    width: 100%;
-    top: 0;
+    
     
 
     nav{
@@ -45,7 +73,6 @@ header{
             &#header-logo{
                 a{
                     font-size: 28px;
-                    color: #fff;
                 }
                 
             }
@@ -54,18 +81,12 @@ header{
                 a{
                     margin-right: 15px;
                     font-size: 18px;
-                    color: #fff;
                 }
             }
 
             &#header-reseaux{
                 a{
                     margin-right: 15px;
-                    svg{
-                        color: #fff;
-                        fill: #fff;
-                    }
-                    
                 }
             }
         }
@@ -75,6 +96,17 @@ header{
 
 <script>
 export default {
-
+    data() {
+        return {
+            header: true
+        }
+    },
+    mounted() {
+        console.log(this.$route.name);
+        if(this.$route.name == 'Listing' || this.$route.name == 'Article'){
+            this.header = false
+            console.log(this.header)
+        }
+    }
 }
 </script>
