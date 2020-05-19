@@ -5,13 +5,13 @@
     <main>
       <div id="page-article">
         <div id="article-list">
-          <div class="article">
-            <h2>LE SAVON, UNE ARME ANTI-VIRUS</h2>
+          <div class="article" v-for="post in posts" :key="post.id">
+            <h2>{{ post.title }}</h2>
             <p class="article-date">18 mai 2020</p>
             <img src="@/assets/img/listing-1.png" alt="">
-            <p class="article-description">Se laver les mains, une façon simple et efficace d’éviter la contamination. Mais comment le savon parvient-il à anéantir le Covid-19 en moins de 40 secondes ?</p>
+            <p class="article-description">{{ post.body }}</p>
             
-            <router-link :to="{name: 'Article', params: {slug: 'romain'}}" class="product-link">Lire la suite</router-link>            
+            <router-link :to="{name: 'Article', params: {slug: post.id}}" class="product-link">Lire la suite</router-link>            
           </div>
 
           <hr>
@@ -71,6 +71,18 @@ import HeaderApp from '@/components/HeaderApp.vue';
 export default {
   components: {
     HeaderApp,
+  },
+  data() {
+    return {
+      posts: null
+    }
+  },
+  created() {
+    fetch('https://jsonplaceholder.typicode.com/posts').then((response) => {
+      response.json().then((data) => {
+        this.posts = data
+      })
+    })
   }
 }
 </script>

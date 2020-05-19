@@ -6,13 +6,13 @@
       <div id="page-article">
         <router-link :to="{name: 'Listing'}" class="product-link">Retour à la liste des articles</router-link>
 
-        <div id="article">
-          <h1>{{ $route.params.slug }}</h1>
+        <div id="article" v-if="post">
+          <h1>{{ post.title }}</h1>
           <p id="article-date">18 mai 2020</p>
 
           <img src="@/assets/img/listing-1.png" alt="Article name">
 
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>{{ post.body }}</p>
         </div>
 
         <hr>
@@ -144,6 +144,19 @@ import HeaderApp from '@/components/HeaderApp.vue';
 export default {
   components: {
     HeaderApp,
+  },
+  data() {
+    return {
+      post: null
+    }
+  },
+  created() {
+    fetch(`https://jsonplaceholder.typicode.com/posts/${this.$route.params.slug}`).then((response) => {
+      response.json().then((data) => {
+        this.post = data
+      })
+    })
   }
 }
+
 </script>
