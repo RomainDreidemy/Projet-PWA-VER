@@ -75,7 +75,7 @@ export default {
       &#home-banner{
         height: 100vh;
         overflow: hidden;
-        background: url("../assets/img/home-banner.jpg");
+        background: url("../assets/img/home-banner.jpg") no-repeat fixed;
         background-size: cover;
         h1{
           position: absolute;
