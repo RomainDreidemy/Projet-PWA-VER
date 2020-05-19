@@ -165,7 +165,11 @@ export default {
       response.json().then((data) => {
         console.log(data);
         this.post = data
+
+        localStorage.setItem(this.$route.path, this.post.title);
       })
+
+      
     });
 
     fetch(`https://my-json-server.typicode.com/RomainDreidemy/API-le-petit-pas-marseillais/comments`).then((response) => {
@@ -183,6 +187,13 @@ export default {
     }else{
       console.log('not share');
     }
+
+    
+
+
+  },
+  mounted() {
+    
   },
   methods: {
     addComment: (event) => {
