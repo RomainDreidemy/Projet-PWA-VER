@@ -2,7 +2,7 @@
     <header :class="{white: header}">
         <nav>
             <div id="header-logo">
-                <router-link :to="{name: 'Home'}">Sāvon</router-link>
+                <router-link :to="{name: 'Home'}">Le Petit Pas Marseillais</router-link>
             </div>
             <div id="header-navigation">
                 <router-link :to="{name: 'Home'}" class="product-link">Accueil</router-link>

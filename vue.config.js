@@ -1,6 +1,6 @@
 module.exports = {
 	pwa: {
-		name: 'Notre super blog',
+		name: 'Le Petit Pas Marseillais',
 		themeColor: '#4DBA87',
 		msTileColor: '#000000',
 		appleMobileWebAppCapable: 'yes',

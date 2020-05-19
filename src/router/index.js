@@ -12,17 +12,26 @@ Vue.use(VueRouter)
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    meta: {
+      title: 'Accueil - Le Petit Pas Marseillais',
+    }
   },
   {
     path: '/listing',
     name: 'Listing',
-    component: Listing
+    component: Listing,
+    meta: {
+      title: 'Liste des articles - Le Petit Pas Marseillais',
+    }
   },
   {
     path: '/article/:slug',
     name: 'Article',
-    component: Article
+    component: Article,
+    meta: {
+      title: 'Article - Le Petit Pas Marseillais',
+    }
   }
 ]
 
