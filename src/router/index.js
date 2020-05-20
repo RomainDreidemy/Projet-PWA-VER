@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import VueMeta from 'vue-meta'
 import Home from '../views/Home.vue'
 import Listing from '../views/Listing.vue'
 import Article from '../views/Article.vue'
@@ -8,15 +9,13 @@ import Recent from '../views/Recent.vue'
 import '../assets/css/reset.scss';
 
 Vue.use(VueRouter)
+Vue.use(VueMeta)
 
   const routes = [
   {
     path: '/',
     name: 'Home',
     component: Home,
-    meta: {
-      title: 'Accueil - Le Petit Pas Marseillais',
-    }
   },
   {
     path: '/listing',
