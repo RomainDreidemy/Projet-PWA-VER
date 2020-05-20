@@ -118,7 +118,7 @@ import HeaderApp from '@/components/HeaderApp.vue';
 
 export default {
   metaInfo: {
-      title: `Liste des articles | Le Petit Pas Marseillais`,
+      title: `Liste des articles`,
     },
   components: {
     HeaderApp,

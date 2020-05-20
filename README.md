@@ -8,6 +8,27 @@ https://le-petit-pas-marseillais.netlify.app/#/
 
 ## Ajout dans le projet
 
+### Utilisation de vue-meta
+
+Implémentation de vue-meta pour changer le title : 
+- Dans App.vue
+```
+export default {
+    metaInfo: {
+      titleTemplate: '%s | Le Petit Pas Marseillais'
+    }
+  }
+```
+
+- Dans chaque vue
+```
+export default {
+  metaInfo: {
+    title: 'Accueil',
+  }
+}
+```
+
 ### Les commentaires
 
 Affichage de commentaire (L'api ne permet pas une gestion propre), pour cela nous avons utiliser la fonction filtre sur le tableau des commentaires de cette façon :
